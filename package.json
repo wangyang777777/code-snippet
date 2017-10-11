@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/wangyang777777/code-snippet/issues"
   },
-  "homepage": "https://github.com/wangyang777777/code-snippet#readme"
+  "homepage": "https://github.com/wangyang777777/code-snippet#readme",
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  }
 }

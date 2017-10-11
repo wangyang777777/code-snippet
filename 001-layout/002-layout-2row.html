@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两列布局</title>
+    <meta name="description" content="这是左边定宽右侧自适应的两列布局">
+    <link rel="stylesheet" type="text/css" href="../node_modules/normalize.css/normalize.css">
+    <style type="text/css">
+        .aside{
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 180px;
+            background-color: #2f4050;
+        }
+
+        .main{
+            height: 1200px;
+            margin-left: 180px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="aside"></div>
+        <div class="main"></div>
+    </div>
+</body>
+</html>
