@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "wangyang",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangyang777777/code-snippet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wangyang777777/code-snippet/issues"
+  },
+  "homepage": "https://github.com/wangyang777777/code-snippet#readme"
 }
