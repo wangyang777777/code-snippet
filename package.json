@@ -1,0 +1,11 @@
+{
+  "name": "wangyang",
+  "version": "1.0.0",
+  "description": "这是自己积累的代码库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wangyang",
+  "license": "ISC"
+}
