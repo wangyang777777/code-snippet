@@ -1,2 +1,5 @@
 # code-snippet
 这是自己积累的代码片段
+
+代码提交到GitHub上的操作方法如下:
+https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000
