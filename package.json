@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/wangyang777777/code-snippet#readme",
   "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
     "normalize.css": "^7.0.0"
   }
 }
