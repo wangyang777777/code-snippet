@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsonp跨域动态创建script标签实现跨域---请求不成功</title>
+</head>
+<body>
+    <div class="mydiv">
+        <button id="btn">点我获取豆瓣数据</button>
+    </div>
+
+    <script type="text/javascript">
+        function handleResponse(response) {
+            console.log(response)
+        }
+    </script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var oBtn = document.getElementById("btn")
+            oBtn.onclick = function () {
+                var script = document.createElement("script")
+                script.src = "https://api.douban.com/v2/book/search?q=javascript&count=1&callback=handleResponse"
+                document.body.insertBefore(script,document.body.firstChild)
+            }
+        }
+    </script>
+</body>
+</html>

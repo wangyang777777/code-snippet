@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS左侧固定宽 右侧自适应（兼容所有浏览器）</title>
+    <link rel="stylesheet" type="text/css" href="css-reset.css">
+    <style type="text/css">
+        section{
+            min-height: 150px;
+            /*margin-bottom: 100px;*/
+        }
+    </style>
+
+</head>
+<body>
+<section>
+    <style type="text/css">
+    /*第一种浮动布局，上面这种实现方法最关键之处就是自适应宽度一栏“div#content”的“margin-left”值要等于固定宽度一栏的宽度值*/
+    .left_1{
+        width: 200px;
+        min-height: 100px;
+        float: left;
+        background-color: #008040;
+    }
+    .content_1{
+        margin-left: 200px;
+        background-color: #999999;
+    }
+    </style>
+    <style type="text/css">
+    </style>
+    <article>
+        <div class="left_1">1.浮动布局</div>
+        <div class="content_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum mollitia sunt debitis sequi, eum impedit dolorum sapiente velit consectetur vitae, dolore est, obcaecati nemo ducimus omnis. Qui, ut itaque, natus accusamus fugit error vero aliquam ipsum hic atque rerum deleniti neque cumque sed dolore enim ratione, praesentium ab similique ullam. Consequuntur quae, fuga, enim soluta temporibus inventore eaque eveniet placeat aliquam, cupiditate eius modi ab dicta dolorem. Deserunt provident, nobis veritatis molestias. Quisquam debitis illo et beatae, esse autem id nam, fugiat ad facilis iste dicta magni commodi explicabo sit voluptatum repudiandae voluptate porro tenetur veniam vel qui. Aliquid error, voluptas consectetur, deleniti, illum ducimus voluptatem eaque explicabo aliquam quo est. Quidem nesciunt voluptatibus aliquid temporibus at ipsa fugit voluptatem, animi cumque nisi nam, recusandae magnam qui eaque. Ipsam, error, ipsa. Necessitatibus commodi tempora fugiat explicabo nostrum laboriosam assumenda autem dolore, temporibus debitis incidunt atque ipsam, reiciendis soluta. Dignissimos accusantium blanditiis dolorem, laborum numquam, aut vitae rerum perspiciatis dolores eligendi assumenda iusto necessitatibus adipisci excepturi dolor laboriosam odit minus consectetur facere consequuntur possimus. Temporibus odio dolorum sed laudantium omnis excepturi in minima. Porro odit beatae, quaerat suscipit magnam et, accusamus molestiae. Voluptatem illo suscipit laboriosam facilis obcaecati, esse nisi nobis!</div>
+    </article>
+</section>
+<section>
+    <style type="text/css">
+
+    .left_2{
+        width: 200px;
+        min-height: 100px;
+        position: absolute;
+        left: 0;
+        background-color: #008040;
+    }
+    .content_2{
+        position: absolute;
+        left: 200px;
+        background-color: #999999;
+    }
+    </style>
+    <style type="text/css">
+    </style>
+    <article class="position">
+        <div class="left_2">2.定位布局</div>
+        <div class="content_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum mollitia sunt debitis sequi, eum impedit dolorum sapiente velit consectetur vitae, dolore est, obcaecati nemo ducimus omnis. Qui, ut itaque, natus accusamus fugit error vero aliquam ipsum hic atque rerum deleniti neque cumque sed dolore enim ratione, praesentium ab similique ullam. Consequuntur quae, fuga, enim soluta temporibus inventore eaque eveniet placeat aliquam, cupiditate eius modi ab dicta dolorem. Deserunt provident, nobis veritatis molestias. Quisquam debitis illo et beatae, esse autem id nam, fugiat ad facilis iste dicta magni commodi explicabo sit voluptatum repudiandae voluptate porro tenetur veniam vel qui. Aliquid error, voluptas consectetur, deleniti, illum ducimus voluptatem eaque explicabo aliquam quo est. Quidem nesciunt voluptatibus aliquid temporibus at ipsa fugit voluptatem, animi cumque nisi nam, recusandae magnam qui eaque. Ipsam, error, ipsa. Necessitatibus commodi tempora fugiat explicabo nostrum laboriosam assumenda autem dolore, temporibus debitis incidunt atque ipsam, reiciendis soluta. Dignissimos accusantium blanditiis dolorem, laborum numquam, aut vitae rerum perspiciatis dolores eligendi assumenda iusto necessitatibus adipisci excepturi dolor laboriosam odit minus consectetur facere consequuntur possimus. Temporibus odio dolorum sed laudantium omnis excepturi in minima. Porro odit beatae, quaerat suscipit magnam et, accusamus molestiae. Voluptatem illo suscipit laboriosam facilis obcaecati, esse nisi nobis!</div>
+    </article>
+</section>
+<section>
+    <style type="text/css">
+    .flex{
+        display: flex;
+    }
+    .left_3{
+        width: 200px;
+        min-height: 100px;
+        background-color: #008040;
+    }
+    .content_3{
+        flex: 1;
+        background-color: #999999;
+    }
+    </style>
+    <style type="text/css">
+    </style>
+    <article class="flex">
+        <div class="left_3">3.flex布局</div>
+        <div class="content_3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum mollitia sunt debitis sequi, eum impedit dolorum sapiente velit consectetur vitae, dolore est, obcaecati nemo ducimus omnis. Qui, ut itaque, natus accusamus fugit error vero aliquam ipsum hic atque rerum deleniti neque cumque sed dolore enim ratione, praesentium ab similique ullam. Consequuntur quae, fuga, enim soluta temporibus inventore eaque eveniet placeat aliquam, cupiditate eius modi ab dicta dolorem. Deserunt provident, nobis veritatis molestias. Quisquam debitis illo et beatae, esse autem id nam, fugiat ad facilis iste dicta magni commodi explicabo sit voluptatum repudiandae voluptate porro tenetur veniam vel qui. Aliquid error, voluptas consectetur, deleniti, illum ducimus voluptatem eaque explicabo aliquam quo est. Quidem nesciunt voluptatibus aliquid temporibus at ipsa fugit voluptatem, animi cumque nisi nam, recusandae magnam qui eaque. Ipsam, error, ipsa. Necessitatibus commodi tempora fugiat explicabo nostrum laboriosam assumenda autem dolore, temporibus debitis incidunt atque ipsam, reiciendis soluta. Dignissimos accusantium blanditiis dolorem, laborum numquam, aut vitae rerum perspiciatis dolores eligendi assumenda iusto necessitatibus adipisci excepturi dolor laboriosam odit minus consectetur facere consequuntur possimus. Temporibus odio dolorum sed laudantium omnis excepturi in minima. Porro odit beatae, quaerat suscipit magnam et, accusamus molestiae. Voluptatem illo suscipit laboriosam facilis obcaecati, esse nisi nobis!</div>
+    </article>
+</section>
+<section>
+    <style type="text/css">
+    /*第一种浮动布局，上面这种实现方法最关键之处就是自适应宽度一栏“div#content”的“margin-left”值要等于固定宽度一栏的宽度值*/
+    .table{
+        display: table;
+    }
+    .table>div{
+        display: table-cell;
+    }
+    .left_4{
+        width: 200px;
+        background-color: #008040;
+    }
+    .content_4{
+        background-color: #999999;
+    }
+    </style>
+    <style type="text/css">
+    </style>
+    <article class="table">
+        <div class="left_4">left4</div>
+        <div class="content_4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum mollitia sunt debitis sequi, eum impedit dolorum sapiente velit consectetur vitae, dolore est, obcaecati nemo ducimus omnis. Qui, ut itaque, natus accusamus fugit error vero aliquam ipsum hic atque rerum deleniti neque cumque sed dolore enim ratione, praesentium ab similique ullam. Consequuntur quae, fuga, enim soluta temporibus inventore eaque eveniet placeat aliquam, cupiditate eius modi ab dicta dolorem. Deserunt provident, nobis veritatis molestias. Quisquam debitis illo et beatae, esse autem id nam, fugiat ad facilis iste dicta magni commodi explicabo sit voluptatum repudiandae voluptate porro tenetur veniam vel qui. Aliquid error, voluptas consectetur, deleniti, illum ducimus voluptatem eaque explicabo aliquam quo est. Quidem nesciunt voluptatibus aliquid temporibus at ipsa fugit voluptatem, animi cumque nisi nam, recusandae magnam qui eaque. Ipsam, error, ipsa. Necessitatibus commodi tempora fugiat explicabo nostrum laboriosam assumenda autem dolore, temporibus debitis incidunt atque ipsam, reiciendis soluta. Dignissimos accusantium blanditiis dolorem, laborum numquam, aut vitae rerum perspiciatis dolores eligendi assumenda iusto necessitatibus adipisci excepturi dolor laboriosam odit minus consectetur facere consequuntur possimus. Temporibus odio dolorum sed laudantium omnis excepturi in minima. Porro odit beatae, quaerat suscipit magnam et, accusamus molestiae. Voluptatem illo suscipit laboriosam facilis obcaecati, esse nisi nobis!</div>
+    </article>
+</section>
+<section>
+    <style type="text/css">
+    /*第一种浮动布局，上面这种实现方法最关键之处就是自适应宽度一栏“div#content”的“margin-left”值要等于固定宽度一栏的宽度值*/
+    .left_5{
+        width: 200px;
+        min-height: 100px;
+        float: left;
+        background-color: #008040;
+    }
+    .content_5{
+        margin-left: 200px;
+        background-color: #999999;
+    }
+    </style>
+    <style type="text/css">
+    </style>
+    <article>
+        <div class="left_5">left5</div>
+        <div class="content_5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum mollitia sunt debitis sequi, eum impedit dolorum sapiente velit consectetur vitae, dolore est, obcaecati nemo ducimus omnis. Qui, ut itaque, natus accusamus fugit error vero aliquam ipsum hic atque rerum deleniti neque cumque sed dolore enim ratione, praesentium ab similique ullam. Consequuntur quae, fuga, enim soluta temporibus inventore eaque eveniet placeat aliquam, cupiditate eius modi ab dicta dolorem. Deserunt provident, nobis veritatis molestias. Quisquam debitis illo et beatae, esse autem id nam, fugiat ad facilis iste dicta magni commodi explicabo sit voluptatum repudiandae voluptate porro tenetur veniam vel qui. Aliquid error, voluptas consectetur, deleniti, illum ducimus voluptatem eaque explicabo aliquam quo est. Quidem nesciunt voluptatibus aliquid temporibus at ipsa fugit voluptatem, animi cumque nisi nam, recusandae magnam qui eaque. Ipsam, error, ipsa. Necessitatibus commodi tempora fugiat explicabo nostrum laboriosam assumenda autem dolore, temporibus debitis incidunt atque ipsam, reiciendis soluta. Dignissimos accusantium blanditiis dolorem, laborum numquam, aut vitae rerum perspiciatis dolores eligendi assumenda iusto necessitatibus adipisci excepturi dolor laboriosam odit minus consectetur facere consequuntur possimus. Temporibus odio dolorum sed laudantium omnis excepturi in minima. Porro odit beatae, quaerat suscipit magnam et, accusamus molestiae. Voluptatem illo suscipit laboriosam facilis obcaecati, esse nisi nobis!</div>
+    </article>
+</section>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsonp跨域的实现--请求不成功</title>
+</head>
+<body>
+<div class="mydiv">
+    <button id="btn">点击获取豆瓣的数据</button>
+</div>
+
+</body>
+
+
+<script type="text/javascript">
+    window.onload = function () {
+        var oBtn = document.getElementById("btn");
+
+        oBtn.onclick = function () {
+            var xhr = new XMLHttpRequest();
+
+            xhr.open("get","https://api.douban.com/v2/book/search?q=javascript&count=1",true);
+
+            xhr.send();
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status ==200) {
+                    console.log(xhr.responseText)
+                }
+            };
+
+        }
+    }
+</script>
+</html>
+

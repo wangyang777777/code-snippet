@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一像素边框的实现</title>
+    <style>
+        /*1. 添加伪类,实现1像素边框*/
+        .bT-1px, .bB-1px{
+            position: relative;
+        }
+        .bT-1px:before, .bB-1px:after{
+             display: block;
+             position: absolute;
+             width: 100%;
+             border-top: 1px solid #CCCCCC;
+             content: ' ';
+         }
+        .bT-1px:before{
+             left: 0;
+             top: 0;
+         }
+        .bB-1px:after{
+             left: 0;
+             bottom: 0;
+         }
+        /*// 1像素边框: 对伪类进行缩放*/
+        @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5) {
+            .bT-1px:before, .bB-1px:after{
+                 -webkit-transform: scaleY(0.7);
+                 transform: scaleY(0.7);
+             }
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2) {
+            .bT-1px:before, .bB-1px:after{
+             -webkit-transform: scaleY(0.5);
+             transform: scaleY(0.5);
+         }
+        }
+    </style>
+</head>
+<body>
+    <div class="bB-1px bT-1px">hello</div>
+</body>
+</html>

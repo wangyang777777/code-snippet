@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery实现JSONP</title>
+</head>
+<body>
+    <div id="mydiv">
+        <button id="btn">点击</button>
+    </div>
+</body>art-template
+<script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+    // $(function(){
+    //     $("#btn").click(function(){
+
+    //         $.ajax({
+    //             async : true,
+    //             url : "https://api.douban.com/v2/book/search",
+    //             type : "GET",
+    //             dataType : "jsonp", // 返回的数据类型，设置为JSONP方式
+    //             jsonp : 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+    //             jsonpCallback: 'handleResponse', //设置回调函数名
+    //             data : {
+    //                 q : "javascript",
+    //                 count : 1
+    //             },
+    //             success: function(response, status, xhr){
+    //                 console.log('状态为：' + status + ',状态是：' + xhr.statusText);
+    //                 console.log(response);
+    //             }
+    //         });
+    //     });
+    // });
+
+    $(function () {
+        $("#btn").click(function () {
+            $.ajax(
+        {
+            async : true,
+            // url:'https://free-api.heweather.com/v5/now',
+            url:'http://thirdpartyjs.com/info.js?callback=jsonpCallback?id=123',
+            type:'GET',
+            dataType:'jsonp',
+            jsonp : 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+            jsonpCallback: 'handleResponse', //设置回调函数名
+            // data :{
+            //     city:"beijing",
+            //     key:"452970d722e14415bd7ac7eb391b0e11"
+            // },
+            data :'',
+            // success:function (data) {
+            //     var jsdata=eval(data);
+            //     var msg=jsdata.HeWeather5[0];
+            //     $("div").html("<ul>"+"<li>"+"您查询的地点为"+msg.basic.city+"</li>"+"<li>"+"天气"+msg.now.cond.txt+"</li>"+"<li>"+"温度"+msg.now.fl+"</li>"+"<li>"+"风向"+msg.now.wind.dir+"</li>")
+            // }
+            success: function(response, status, xhr){
+                    console.log('状态为：' + status + ',状态是：' + xhr.statusText);
+                    console.log(response);
+                }
+        }
+    )
+        })
+
+})
+
+</script>
+</html>
+

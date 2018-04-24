@@ -1,0 +1,19 @@
+/*
+* @Author: wangyang
+* @Date:   2017-11-19 16:58:47
+* @Last Modified by:   wangyang
+* @Last Modified time: 2017-11-19 19:07:33
+*/
+.box{
+    width: 1200px;
+    margin: 0 auto;
+}
+.header{
+    height: 27px;
+    border-bottom: 1px solid #ddd;
+}
+.header .box ul li{
+    float: right;
+    line-height: 27px;
+}
+

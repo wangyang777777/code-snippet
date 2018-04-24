@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../node_modules/swiper/dist/css/swiper.min.css">
+    <style type="text/css">
+    .swiper-container {
+        width: 1024px;
+        height: 768px;
+        border: 2px solid red;
+    }
+
+</style>
+</head>
+<body>
+<div class="banner-container swiper-container">
+    <div class="swiper-wrapper">
+        <div class="banner-slide swiper-slide">
+            <a href="javascript:viod(0);"><img src="img/01.jpg"></a>
+        </div>
+        <div class="banner-slide swiper-slide">
+            <a href="javascript:viod(0);"><img src="img/02.jpg"></a>
+        </div>
+        <div class="banner-slide swiper-slide">
+            <a href="javascript:viod(0);"><img src="img/04.jpg"></a>
+        </div>
+        <div class="banner-slide swiper-slide">
+            <a href="javascript:viod(0);"><img src="img/05.jpg"></a>
+        </div>
+    </div>
+    <!--需要焦点按钮时加这段div-->
+    <div class="banner-pagination pagination">
+        <span></span>
+    </div>
+</div>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="src/swiper-3.4.2.jquery.min.js"></script>
+
+<script type="text/javascript">
+    var mySwiper = new Swiper('.banner-container',{
+        loop: true,                                         //用来循环播放
+        pagination: '.banner-pagination',                   //显示焦点按钮
+        paginationClickable: '.banner-pagination',          //焦点按钮可点击
+    });
+    setInterval("mySwiper.slideNext()", 2000);              //加定时器的目的是：点击焦点按钮后，自动播放你所点击的那张图片的下一张
+</script>
+</body>
+</html>

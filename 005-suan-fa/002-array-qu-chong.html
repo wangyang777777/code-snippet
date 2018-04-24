@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+</head>
+<body>
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+    // 第一种方法 jquery中的unique数组去重方法,
+    // 只处理删除DOM元素数组，而不能处理字符串或数字数组。
+    // 要处理字符串或数字数组，我们可以借助UnderScore.js类库里面的uniq()方法。
+    // var arr = [1,7,2,3,5,7,5,3];
+    // $.unique(arr);
+    // console.log(arr);
+
+    // 第二种方法
+
+    var array = [1,2,2,3,4,4,5];
+    function unique(arr) {
+        var result = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (result.indexOf(arr[i])==-1) {
+                result.push(arr[i]);
+            }
+        }
+        console.log(result);
+    }
+    unique(array);
+</script>
+</body>
+</html>

@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/wangyang777777/code-snippet#readme",
   "dependencies": {
+    "art-template": "^4.12.2",
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "swiper": "^4.0.1",
+    "vue": "^2.5.13"
   }
 }

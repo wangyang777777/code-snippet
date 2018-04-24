@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取数据实现城市天气状况查询</title>
+    <!-- <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../node_modules/swiper/dist/css/swiper.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/Swiper/4.0.1/css/swiper.css"> -->
+
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body>
+<!-- 轮播图 -->
+    <div class="banner-container swiper-container">
+        <div class="swiper-wrapper">
+            <div class="banner-slide swiper-slide">
+                <a href="javascript:viod(0);"><img src="img/0dcd8c3143ce2543bddeaffc7287aa47.jpg"></a>
+            </div>
+            <div class="banner-slide swiper-slide">
+                <a href="javascript:viod(0);"><img src="img/81e2f59d6527bdfd57d39c0b2e93e79a.jpg"></a>
+            </div>
+        </div>
+
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    </div>
+
+
+
+<div class="show">
+    <!-- form表单 -->
+    <div class="form">
+        <form class="form-inline">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputAmount"></label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入城市名" value="北京">
+                </div>
+            </div>
+             <button type="button" class="btn btn-primary" id="btn">查询</button>
+        </form>
+    </div>
+    <div class="tmp">15</div>
+    <div class="float">
+        <div class="location">北京</div>
+        <div class="weather">多云</div>
+    </div>
+
+</div>
+
+<!-- <script type="text/javascript" src="../../node_mo dules/jquery/dist/jquery.js"></script> -->
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<!-- <script type="text/javascript" src="../../node_modules/swiper/dist/js/swiper.js"></script> -->
+<script type="text/javascript" src="src/swiper-3.4.2.jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+        // var city = $("#btn").val();
+        var city = $("#exampleInputAmount").val()
+        // console.log(city)
+        var _mm = {
+    // 网络请求
+        request : function(param){
+            var _this = this;
+            $.ajax({
+                type        : param.method  || 'get',
+                url         : param.url     || '',
+                datatype    : param.type    || 'jsonp',
+                data        : param.data    || '',
+                // success     : function(res){
+                //     console.log(res)
+                // },
+                success     : param.success,
+                error       : param.error
+            });
+        }
+    };
+
+    var _user = {
+        // 用户登录
+        login : function(userInfo, resolve, reject){
+            _mm.request({
+                url     : "https://free-api.heweather.com/v5/now",
+                data    : userInfo,
+                method  : 'get',
+                success : resolve,
+                error   : reject
+            });
+        }
+    }
+
+    $("#btn").click(function () {
+        var formData = {
+            city:$.trim($("#exampleInputAmount").val()) ,
+            key:"452970d722e14415bd7ac7eb391b0e11"
+        }
+        _user.login(
+            formData,
+            function (res) {
+                console.log(res)
+                    console.log(res.HeWeather5[0].basic.city)
+                    $(".tmp").text(res.HeWeather5[0].now.tmp)
+                    $(".location").text(res.HeWeather5[0].basic.city)
+                    $(".weather").text(res.HeWeather5[0].now.cond.txt)
+
+            },
+            function(errMsg){
+                console.log("出错啦");
+            }
+    )
+    })
+
+
+})
+
+
+
+
+</script>
+<script type="text/javascript">
+    // swiper初始化
+    var mySwiper = new Swiper('.banner-container',{
+        loop: true,                                         //用来循环播放
+        // pagination: '.banner-pagination',                   //显示焦点按钮
+        // paginationClickable: '.banner-pagination',          //焦点按钮可点击
+
+        // 如果需要分页器
+        // pagination: '.swiper-pagination',
+
+        // 如果需要前进后退按钮
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+
+        // 如果需要滚动条
+        // scrollbar: '.swiper-scrollbar',
+    });
+    setInterval("mySwiper.slideNext()", 5000);              //加定时器的目的是：点击焦点按钮后，自动播放你所点击的那张图片的下一张
+</script>
+
+</body>
+</html>

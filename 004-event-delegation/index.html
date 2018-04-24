@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托，又叫事件代理</title>
+</head>
+<body>
+<!-- 推荐一篇博客http://www.cnblogs.com/liugang-vip/p/5616484.html -->
+<!-- ul#ul1>li{$}*4 -->
+<ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+
+<script type="text/javascript">
+    // 这是一般实现情况
+    // window.onload = function () {
+    //     var oUl = document.getElementById("ul1");
+    //     var ali = document.getElementsByTagName("li");
+    //     for (var i = 0; i <= ali.length; i++) {
+    //         ali[i].onclick = function () {
+    //             alert("一般事件的实现方式")
+    //         }
+    //     }
+    // }
+
+
+    // 下面实现事件委托
+    //
+    // 优点：
+    // 1、可以大量节省内存占用，减少事件注册，比如在table上代理所有td的click事件就非常棒
+    // 2、可以实现当新增子对象时无需再次对其绑定事件，对于动态内容部分尤为合适
+
+    window.onload = function () {
+        var oUl = document.getElementById("ul1");
+        oUl.onclick = function () {
+            alert("事件委托")
+        }
+    }
+</script>
+</body>
+</html>

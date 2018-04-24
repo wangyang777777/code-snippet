@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子的垂直居中的几种方法</title>
+    <link rel="stylesheet" type="text/css" href="css-reset.css">
+    <style type="text/css">
+    /*提取公共的样式*/
+        section article{
+            width: 100%;
+            height: 200px;
+            background-color: #808080;
+            margin-top: 1px;
+        }
+        section article div{
+            width: 100px;
+            height: 100px;
+            /*border-radius: 10px;*/
+            background-color: #FF8000;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <style>
+        .center_1{
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+    <article class="box1">
+        <div class="center_1">宽高未知的垂直居中</div>
+    </article>
+</section>
+
+
+<section>
+    <!-- 这是flex的垂直居中 -->
+    <style>
+        .box2{
+            display: flex;
+            align-items: center;/*align-items 属性用于定义如何沿着交叉轴方向分配子容器的间距。*/
+            justify-content: center;/*justify-content 属性用于定义如何沿着主轴方向排列子容器。*/
+        }
+        .center_2{
+
+        }
+    </style>
+    <article class="box2">
+        <div class="center_2">flex垂直居中</div>
+    </article>
+</section>
+</body>
+</html>

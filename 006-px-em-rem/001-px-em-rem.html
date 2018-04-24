@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>px/em/rem的区别和使用</title>
+    <link rel="stylesheet" type="text/css" href="../001-layout/css-reset.css">
+    <style type="text/css">
+        html,body{
+            font-size: 16px;
+        }
+        .float1{
+            width: 10em;
+            height: 10em;
+            font-size: 2em;
+            background-color: #008040;
+        }
+        .float2{
+            width: 7em;
+            height: 7em;
+            /*font-size: 2em;*/
+            background-color: #FF8000;
+        }
+        .float3{
+            width: 4em;
+            height: 4em;
+            background-color: #8000FF;
+        }
+    </style>
+</head>
+<body>
+    <div class ="float1">
+        <div class="float2">
+            <div class="float3"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function show(id) {
+            var ele = document.querySelector(id);
+            var w = ele.offsetWidth;
+            var h = ele.offsetHeight;
+            var p1 = document.createElement("p");
+            var p2 = document.createElement("p");
+            ele.appendChild(p1);
+            ele.appendChild(p2);
+            p1.innerHTML="width:"+w;
+            p2.innerHTML="height:"+h;
+        }
+        show(".float1")
+        show(".float2")
+        show(".float3")
+    </script>
+</body>
+</html>

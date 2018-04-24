@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>art-template模板引擎的使用</title>
+</head>
+<body>
+    <div id="content">
+
+    </div>
+    <!-- 二、编写HTML模板 -->
+    <script id="test" type="text/html">
+        <h1>{{title}}</h1>
+    </script>
+    <!-- 一、引入art-template.js文件 -->
+    <script type="text/javascript" src="../node_modules/art-template/lib/template-web.js"></script>
+    <script type="text/javascript">
+// 三、向模板插入数据，并输出到页面
+        var data = {
+            title:"hello world"
+        };
+        var html = template("test",data);
+        document.getElementById('content').innerHTML = html;
+
+</script>
+</body>
+</html>

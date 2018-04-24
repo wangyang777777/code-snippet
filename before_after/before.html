@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <link rel="stylesheet" type="text/css" href="css-reset.css">
+    <style>
+        .zw_img {
+            width: 300px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+        ul li{
+            margin-top: 10px;
+        }
+        .leading-list .zw_img{
+            position: relative;
+        }
+        .leading-list li:nth-child(1) .zw_img::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            content: "1";
+            width: 20px;
+            height: 20px;
+            background-color: #FF4800;
+            display: inline-block;
+            padding: 2px 0 0 4px;
+            color: #FFF;
+            font-size: 13px;
+            border-radius: 4px 4px 30px 4px;
+        }
+        .leading-list li:nth-child(2) .zw_img::before {
+            position: absolute;            
+            box-sizing: border-box;            
+            content: "2";
+            width: 20px;
+            height: 20px;
+            background-color: #FFA700;
+            display: inline-block;
+            padding: 2px 0 0 4px;         
+            color: #FFF;
+            font-size: 13px;
+            border-radius: 4px 4px 30px 4px;
+        }
+        .leading-list li:nth-child(3) .zw_img::before {
+            position: absolute;            
+            box-sizing: border-box;            
+            content: "3";
+            width: 20px;
+            height: 20px;
+            background-color: #FC8D43;
+            display: inline-block;
+            padding: 2px 0 0 4px;                        
+            color: #FFF;
+            font-size: 13px;
+            border-radius: 4px 4px 30px 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="leading-list">
+        <ul>
+        <li>
+            <div class="zw_img">
+            </div>
+        </li>
+        <li>
+            <div class="zw_img">
+            </div>
+        </li>
+        <li>
+            <div class="zw_img">
+            </div>
+        </li>
+        <li>
+            <div class="zw_img">
+            </div>
+        </li>
+    </ul>
+
+    </div>
+    
+</body>
+
+</html>
